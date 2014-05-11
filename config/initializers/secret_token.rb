@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Resitivity::Application.config.secret_key_base = 'ac4124aca7067ce35b35135a6697d88169f853ae21c14fe29f982bd1d4fd3f359645f947aa15acd958d7bd4f0d41f3ab988098a4770fa907ed4eb58a4968f29b'
+Auth::Application.config.secret_key_base = 'd7254f502855d822c97dfaec243b7928f95b4751720680fd0269edae1c6d10f3ba7ff5a6e22af687365497cdf9dd5e8f9e27648b5b5b7629884892349bd595fa'
