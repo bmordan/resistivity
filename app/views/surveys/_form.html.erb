@@ -1,0 +1,16 @@
+<%= form_for @survey do |f| %>
+<%= hidden_field_tag 'survey[user_id]', session[:user_id] %>
+<label>Name of Site</label>
+<%= f.text_field :site %>
+<label>Date of Survey</label>
+<%= f.date_field :date %>
+<label>Name of Surveyor</label>
+<%= f.text_field :surveyors %>
+<br />
+<label>Width of Grid</label>
+<%= f.text_field(:gridx, size: 3) %>
+<label>Number of Rows</label>
+<%= f.text_field(:gridy, size: 3) %>
+<br />
+<%= f.submit %>
+<% end %>

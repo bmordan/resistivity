@@ -1,0 +1,15 @@
+<h1> Welcome <%= @user.email.split('@',2)[0] %></h1>
+<% if @surveys.nil? %>
+  <p>You don't have any Surveys.</p>
+<% else %>
+<p>Your Resistivity Surveys</p>
+<ul>
+  <% @surveys.each do |s| %>
+  <li>
+    <%= link_to s.site, survey_path(s.id) %> | 
+    <%= link_to 'edit', edit_survey_path(s.id) %>
+  </li>
+  <% end %>
+</ul>
+<% end %> 
+<p><%= link_to 'Add a Survey', new_survey_path %></p>     
