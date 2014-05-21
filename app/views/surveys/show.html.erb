@@ -1,4 +1,5 @@
 <label>Site: </label><%= @survey.site %><br />
 <label>Date of Survey: </label><%= @survey.date %><br />
 <label>Survey Performed by: </label><%= @survey.surveyors %><br />
+<label>Add a Grid: </label><%= link_to 'Add', new_grid_path %><br />
 <%= link_to 'close', surveys_path %>

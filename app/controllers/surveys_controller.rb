@@ -7,6 +7,7 @@ class SurveysController < ApplicationController
   
   def show
     @survey = Survey.find(params[:id])
+    flash[:survey] = @survey
   end
   
   def new

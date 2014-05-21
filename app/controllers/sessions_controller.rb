@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:email],params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url, flash[:notice] => "Welcome"
+      redirect_to surveys_path
     else
       flash[:notice] = "invalid email or password"
       render "new"
