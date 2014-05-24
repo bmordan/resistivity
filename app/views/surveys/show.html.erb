@@ -1,5 +1,17 @@
 <label>Site: </label><%= @survey.site %><br />
 <label>Date of Survey: </label><%= @survey.date %><br />
 <label>Survey Performed by: </label><%= @survey.surveyors %><br />
-<label>Add a Grid: </label><%= link_to 'Add', new_grid_path %><br />
+<label>Add a Grid: </label>
+<%= link_to 'Add', new_survey_grid_path(@survey) unless @survey.grid.present? %>
+<%= link_to 'Edit', edit_survey_grid_path(@survey,@survey.grid.last.id) unless @survey.grid.empty? %>
+<br />
 <%= link_to 'close', surveys_path %>
+<table>
+<% @survey.grid.each do |r| %>
+  <tr>
+    <% r.row.split(",").each do |f| %>
+      <td><%= f %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>

@@ -7,8 +7,8 @@ Resistivity::Application.routes.draw do
   root :to => "sessions#new"
   resources :users
   resources :sessions
-  resources :surveys
-  resources :grids
-  
+  resources :surveys do
+    resources :grids
+  end
   
 end
