@@ -1,0 +1,17 @@
+<div style='width: 90%; margin: 0% 0% 0% 10%;'>
+<%= form_for([@survey, @survey.grid.build]) do |f| %>
+  <input type="hidden" name="survey_id" value="<%= @survey.id %>">
+  <input type="hidden" name="grid_x" value="<%= @survey.gridx %>">
+  <% r=1 %>
+  <% @survey.gridy.times do %>
+    <% i=1 %>
+      <% @survey.gridx.times do %>
+        <input name="<%= r.to_s + '|' + i.to_s %>" size="3">
+        <% i+=1 %>
+      <% end %>
+      <br />
+    <% r+=1 %>
+  <% end %>
+  <%= f.submit("Save Data") %>
+<% end %>
+</div>

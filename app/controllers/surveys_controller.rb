@@ -7,6 +7,12 @@ class SurveysController < ApplicationController
   
   def show
     @survey = Survey.find(params[:id])
+    @array = []
+    @survey.grid.each do |r|
+      data = r.row.split(",")
+      data.each do |d| @array << d end
+    end
+    @normalise = 255/@array.max.to_i
   end
   
   def new

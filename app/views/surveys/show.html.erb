@@ -10,7 +10,7 @@
 <% @survey.grid.each do |r| %>
   <tr>
     <% r.row.split(",").each do |f| %>
-      <td><%= f %></td>
+      <td style="background: rgb(<%= f.to_i*@normalise %>,0,0)"><%= f %></td>
     <% end %>
   </tr>
 <% end %>
