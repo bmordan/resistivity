@@ -5,9 +5,8 @@
 <p class="section">Your Resistivity Surveys</p>
 <ul>
   <% @surveys.each do |s| %>
-  <% d = DateTime.parse(s.date.to_s) %>
   <li>
-    <h2><%= link_to s.site, survey_path(s.id) %> <span style="font-size:0.5em;"><%= link_to d.strftime('%a %m %B %Y'), survey_path(s.id) %></span></h2>
+    <h2><%= link_to s.site, survey_path(s.id) %></h2>
   </li>
   <% end %>
 </ul>

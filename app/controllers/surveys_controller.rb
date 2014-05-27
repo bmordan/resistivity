@@ -18,6 +18,7 @@ class SurveysController < ApplicationController
         data.each do |d| @array << d end
       end
       @normalise = 255/@array.max.to_i
+      @y = 30
     end  
   end
   

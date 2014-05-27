@@ -1,0 +1,6 @@
+<div id="navwrapper">
+  <%= link_to image_tag('home.png', :class => "icon"), surveys_path %>
+  <%= link_to image_tag('edit.png',:class => "icon"), edit_survey_path(@survey.id) %>
+  <%= link_to image_tag('grid.png', :class => "icon"), new_survey_grid_path(@survey) unless @survey.grid.present? %>
+  <%= link_to image_tag('grid.png', :class => "icon"), edit_survey_grid_path(@survey,@survey.grid.last.id) unless @survey.grid.empty? %>
+</div>

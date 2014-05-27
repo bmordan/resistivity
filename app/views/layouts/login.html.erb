@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Resitivity Render App</title>
+  <link href='http://fonts.googleapis.com/css?family=News+Cycle|Fredericka+the+Great' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application", "jquery-ui-1.10.4.custom.css", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "jquery-1.11.1.min.js", "jquery-ui-1.10.4.custom.min.js", "application.js", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body> 
+  <div style="width:40%;margin:auto;margin-top:-5%;">
+    <div>
+      <h1 id="title">Resistivity.Guru</h1>
+      <p>Electrical resistance surveys, also called earth resistance or resistivity surveys, are one of a number of methods used in archaeological geophysics. In this type of survey electrical resistance meters are used to detect and map subsurface archaeological features and patterning. This site renders the data readings of these surveys into coloured maps.</p>
+    </div>
+    <div id="user_nav">
+      <% if current_user %>
+        <%= current_user.email %> | <%= link_to "Log out", logout_path %>
+      <% else %>
+        <%= link_to "Create Account", sign_up_path %>
+      <% end %> 
+    </div>
+    <hr />  
+    <h2 style="text-align:center;"><%= flash[:notice] %></h2>
+    <%= yield %>
+  </div>  
+</body>
+</html>
