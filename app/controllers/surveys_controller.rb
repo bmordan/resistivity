@@ -1,18 +1,24 @@
 class SurveysController < ApplicationController
 
   def index
-     @user = User.find(session[:user_id])
-     @surveys = @user.survey
+     if session[:user_id].nil?
+       redirect_to login_path
+     else
+        @user = User.find(session[:user_id])
+        @surveys = @user.survey  
+     end 
   end  
   
   def show
     @survey = Survey.find(params[:id])
-    @array = []
-    @survey.grid.each do |r|
-      data = r.row.split(",")
-      data.each do |d| @array << d end
-    end
-    @normalise = 255/@array.max.to_i
+    unless @survey.grid.empty? then
+      @array = []
+      @survey.grid.each do |r|
+        data = r.row.split(",")
+        data.each do |d| @array << d end
+      end
+      @normalise = 255/@array.max.to_i
+    end  
   end
   
   def new

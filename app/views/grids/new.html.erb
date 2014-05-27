@@ -1,4 +1,3 @@
-<div style='width: 90%; margin: 0% 0% 0% 10%;'>
 <%= form_for([@survey, @survey.grid.build]) do |f| %>
   <input type="hidden" name="survey_id" value="<%= @survey.id %>">
   <input type="hidden" name="grid_x" value="<%= @survey.gridx %>">
@@ -12,6 +11,6 @@
       <br />
     <% r+=1 %>
   <% end %>
-  <%= f.submit("Save Data") %>
+  <%= link_to image_tag('home.png', :class => "icon"), surveys_path %>
+  <%= image_submit_tag("save.png", :class => "icon") %>
 <% end %>
-</div>

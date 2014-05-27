@@ -1,15 +1,16 @@
-<h1> Welcome <%= @user.email.split('@',2)[0] %></h1>
+<%= image_tag('home.png', :class => 'icon' )%><h1>Welcome <%= @user.email.split('@',2)[0] %></h1>
 <% if @surveys.nil? %>
-  <p>You don't have any Surveys.</p>
+  <p class="section">You don't have any Surveys.</p>
 <% else %>
-<p>Your Resistivity Surveys</p>
+<p class="section">Your Resistivity Surveys</p>
 <ul>
   <% @surveys.each do |s| %>
+  <% d = DateTime.parse(s.date.to_s) %>
   <li>
-    <%= link_to s.site, survey_path(s.id) %> | 
-    <%= link_to 'edit', edit_survey_path(s.id) %>
+    <h2><%= link_to s.site, survey_path(s.id) %> <span style="font-size:0.5em;"><%= link_to d.strftime('%a %m %B %Y'), survey_path(s.id) %></span></h2>
   </li>
   <% end %>
 </ul>
 <% end %> 
-<p><%= link_to 'Add a Survey', new_survey_path %></p>     
+<hr>
+<%= link_to image_tag('grid.png', :class => 'icon'), new_survey_path %><span class="iconlabel"><%= link_to ('Add a New Survey'), new_survey_path %></span>

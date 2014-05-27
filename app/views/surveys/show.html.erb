@@ -1,17 +1,19 @@
-<label>Site: </label><%= @survey.site %><br />
-<label>Date of Survey: </label><%= @survey.date %><br />
-<label>Survey Performed by: </label><%= @survey.surveyors %><br />
-<label>Add a Grid: </label>
-<%= link_to 'Add', new_survey_grid_path(@survey) unless @survey.grid.present? %>
-<%= link_to 'Edit', edit_survey_grid_path(@survey,@survey.grid.last.id) unless @survey.grid.empty? %>
-<br />
-<%= link_to 'close', surveys_path %>
-<table>
-<% @survey.grid.each do |r| %>
-  <tr>
-    <% r.row.split(",").each do |f| %>
-      <td style="background: rgb(<%= f.to_i*@normalise %>,0,0)"><%= f %></td>
-    <% end %>
-  </tr>
+<%= image_tag('grid.png', :class => 'icon') %><span class="iconlabel"><h2><%= @survey.site %></h2></span><h2 style="float:right;"><%= @survey.date %></h2>
+<% if @survey.grid.empty? %>
+  <table>
+    <tr>
+      <td>A visualisation of your data will appear here</td>
+    </tr>
+  </table>
+<% else %>
+  <table style="width: 100%; border: solid 0px black;border-collapse:collapse;">
+  <% @survey.grid.each do |r| %>
+    <tr>
+      <% r.row.split(",").each do |f| %>
+        <td style="background: rgb(<%= f.to_i*@normalise %>,0,0)"><%= f %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </table>
 <% end %>
-</table>
+<%= render "navwrapper" %>

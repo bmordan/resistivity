@@ -1,15 +1,15 @@
-<div style='width: 90%; margin: 0% 0% 0% 10%;'>
 <%= form_for @grid, :url => survey_grid_path, method: :put do |f| %>
   <input type="hidden" name="grid_x" value="<%= @grid[0][:rownumber] %>">
   <% r=1 %>
   <% @grid.each do |d| %>
     <% i=1 %>
     <% d.row.split(",").each do |v| %>
-      <input name="<%= r.to_s + '|' + i.to_s %>" value="<%= v %>">
+      <input name="<%= r.to_s + '|' + i.to_s %>" value="<%= v %>" size="2">
       <% i+=1 %>
     <% end %>
+    <br />
     <% r+=1 %>
   <% end %>
-  <input type="submit" value="Update Data">
+  <%= link_to image_tag('home.png', :class => "icon"), surveys_path %>
+  <%= image_submit_tag('save.png', :class => "icon" )%>
 <% end %>
-</div>

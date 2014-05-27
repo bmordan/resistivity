@@ -1,16 +1,15 @@
 <h1>Log in</h1>
-<%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <%= submit_tag :Login %>
-<% end %>
-<br />
-<%= link_to 'Home Page', surveys_path %> 
-
-    
+  <%= form_tag sessions_path do %>
+    <p>
+      <%= label_tag :email %><br />
+      <%= text_field_tag :email, params[:email] %>
+    </p>
+    <p>
+      <%= label_tag :password %><br />
+      <%= password_field_tag :password %>
+    </p>
+    <p id="loginLock">
+    <%= image_submit_tag("unlock.png", :class => "icon") %>
+    <%= image_submit_tag("lock.png", :class => "icon") %>
+    </p>
+  <% end %> 

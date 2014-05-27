@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+body{width:80%;margin:auto;padding:5%;}
+h1,h2,h2 a{font-family: 'Fredericka the Great', cursive;}
+h1{font-size: 2.7em;}
+h2, h2 a{font-size: 1.8em;display:inline;color:rgb(233,0,0);}
+a{text-decoration: none;color:#7c7c7c;}
+a,p,#user_nav,td{font-family: 'News Cycle', sans-serif;}
+input{font-family: 'News Cycle', sans-serif;font-size: 1.2em;}
+li{list-style-type:none;}
+.section{clear:both;}
+#navwrapper,table{clear:both;padding:10px;}
+.icon{width:64px;padding:10px;float:left;margin-right:32px;}
+.iconlabel{padding-top: 26px;float:left;}
+input.icon{padding-top:21px;}
