@@ -6,7 +6,6 @@
     <tr><td class="r">Name of Surveyor</td><td class="l"><%= f.text_field :surveyors, size: 25 %></td></tr>
     <tr><td class="r">Width of Grid <%= f.text_field(:gridx, size: 3) %></td><td class="l">Number of Rows <%= f.text_field(:gridy, size: 3) %></td></tr>
   </table>
-  <hr />
-  <%= link_to image_tag('home.png', :class => "icon"), surveys_path %>
-  <%= image_submit_tag('save.png', :class => "icon") %>
-<% end %>
+<hr />
+<%= render 'navwrapper'%>   
+<% end %>  

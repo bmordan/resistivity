@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 20140513145326) do
 
   create_table "grids", force: true do |t|
-    t.integer  "survey_id"
     t.string   "row"
     t.integer  "rownumber"
+    t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

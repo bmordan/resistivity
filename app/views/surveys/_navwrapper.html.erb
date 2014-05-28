@@ -1,6 +1,44 @@
 <div id="navwrapper">
-  <%= link_to image_tag('home.png', :class => "icon"), surveys_path %>
-  <%= link_to image_tag('edit.png',:class => "icon"), edit_survey_path(@survey.id) %>
-  <%= link_to image_tag('grid.png', :class => "icon"), new_survey_grid_path(@survey) unless @survey.grid.present? %>
-  <%= link_to image_tag('grid.png', :class => "icon"), edit_survey_grid_path(@survey,@survey.grid.last.id) unless @survey.grid.empty? %>
+  <% case controller.action_name %>
+    <% when 'index' %>
+      <div class="navitem">
+        <%= link_to image_tag('grid.png', :class => 'icon'), new_survey_path %>
+        <%= link_to 'Survey', new_survey_path, :class => 'icon' %>
+      </div>
+    <% when 'new' %> 
+      <div class="navitem">
+        <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %>
+        <%= link_to 'Home', surveys_path, :class => 'icon' %>
+      </div>
+      <div class="navitem upnudge">
+        <%= image_submit_tag('save.png', :class => 'icon') %>
+        <%= link_to 'Save', surveys_path, :class => 'icon' %>
+      </div>
+    <% when 'show' %>
+      <% if @survey.grid.present? %>
+        <div class="navitem">
+          <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %>
+          <%= link_to 'Home', surveys_path, :class => 'icon' %>
+        </div>      
+        <div class="navitem">
+          <%= link_to image_tag('grid.png', :class => 'icon'), edit_survey_grid_path(@survey,@survey.grid.last.id) %>
+          <%= link_to 'Edit', edit_survey_grid_path(@survey,@survey.grid.last.id), :class => 'icon' %>
+        </div>
+        <div class="navitem">
+          <%= image_tag('save.png', :id => 'download') %>
+          <%= link_to 'DownLoad' %>
+        </div>        
+      <% else %>
+        <div class="navitem">
+          <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %>
+          <%= link_to 'Home', surveys_path, :class => 'icon' %>
+        </div> 
+        <div class="navitem">
+          <%= link_to image_tag('grid.png', :class => 'icon'), new_survey_grid_path(@survey) %>
+          <%= link_to 'Add', new_survey_grid_path(@survey), :class => 'icon' %>
+        </div>                
+      <% end %>
+    <% else %>
+      <p>No page</p>  
+  <% end %>
 </div>

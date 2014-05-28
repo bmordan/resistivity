@@ -1,38 +1,41 @@
-<%= image_tag('grid.png', :class => 'icon') %><span class="iconlabel"><h2><%= @survey.site %></h2></span><h2 style="float:right;"><%= @survey.date %></h2>
+<h2><%= @survey.site %> | <%= @survey.date %></h2>
 <% if @survey.grid.empty? %>
-
-      <h2>A visualisation of your data will appear here</h2>
-
+  <div id="gridWrapper">
+    <h2>A visualisation of your data will appear here</h2>
+  </div>
 <% else %>
-<div id="gridWrapper">
-  <canvas id="grid" width="<%= @survey.gridx*30 %>" height="<%= @survey.gridy*30 %>"></canvas>
-</div>
+  <div id="gridWrapper">
+    <canvas id="grid" width="<%= @survey.gridx*30 %>" height="<%= @survey.gridy*30+30 %>"></canvas>
+  </div>
+  
   <% @survey.grid.each do |r| %>
     <% @row = [] %>
     <% r.row.split(",").each do |num| %>
       <% @row.push(num.to_i) %>
     <% end %>
-    <script>
-      var canvas = document.getElementById('grid');
-      var context = canvas.getContext('2d');
-      var normalise = <%= @normalise %>;
-      var array = <%= @row.to_json %>;
-      var x = 0;
-      for(var i=0;i < array.length;i++){
-        context.beginPath();
-        context.strokeStyle="rgb(" + array[i]*normalise + ",0,0)";
-        context.moveTo(x, <%= @y %>);
-        context.lineTo(x+30, <%= @y %>);
-        context.lineWidth = 30;
-        context.stroke();
-        x = x+30;
-      }
-    </script>
+      <script>
+        var canvas = document.getElementById('grid');
+        var context = canvas.getContext('2d');
+        var normalise = <%= @normalise %>;
+        var array = <%= @row.to_json %>;
+        var x = 0;
+        for(var i=0;i < array.length;i++){
+          context.beginPath();
+          context.strokeStyle="rgb(" + array[i]*normalise + ",0,0)";
+          context.moveTo(x, <%= @y %>);
+          context.lineTo(x+30, <%= @y %>);
+          context.lineWidth = 30;
+          context.stroke();
+          x = x+30;
+        }
+      </script>
     <% @y += 30 %>
   <% end %>
   
 <% end %>
-<%= render "navwrapper" %><%= image_tag('save.png', :id => 'download') %>
+<hr />
+<%= render "navwrapper" %>
+
 <script>
   $('#download').click(function(){
     var base64 = canvas.toDataURL();

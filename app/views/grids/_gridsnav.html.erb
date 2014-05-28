@@ -1,0 +1,25 @@
+<div id="navwrapper">
+  <% case controller.action_name %>
+    <% when 'new' %> 
+      <div class="navitem">
+        <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %>
+        <%= link_to 'Home', surveys_path, :class => 'icon' %>
+      </div>
+      <div class="navitem upnudge">
+        <%= image_submit_tag('save.png', :class => 'icon') %>
+        <%= link_to 'Save', new_survey_grid_path(@survey), :class => 'icon' %>
+      </div>
+      
+    <% when 'edit' %>
+      <div class="navitem">
+        <%= link_to image_tag('home.png', :class => 'icon'), survey_path(@survey) %>
+        <%= link_to 'Home', survey_path(@survey), :class => 'icon' %>
+      </div>
+      <div class="navitem upnudge">
+        <%= image_submit_tag('save.png', :class => 'icon') %>
+        <%= submit_tag 'Update', :class => 'icon' %>
+      </div>           
+    <% else %>
+      <p>No page</p> 
+  <% end %>
+</div>

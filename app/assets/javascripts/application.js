@@ -25,8 +25,8 @@ jQuery(function() {
       jQuery('input[alt="Lock"]').stop(true, true).hide();
     },
     function(){
-      jQuery('input[alt="Unlock"]').stop(true, true).hide();
-      jQuery('input[alt="Lock"]').stop(true, true).show();
+      jQuery('input[alt="Unlock"]').stop(true, true).show();
+      jQuery('input[alt="Lock"]').stop(true, true).hide();
     }
   );
   //focus

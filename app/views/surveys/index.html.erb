@@ -1,5 +1,5 @@
-<%= image_tag('home.png', :class => 'icon' )%><h1>Welcome <%= @user.email.split('@',2)[0] %></h1>
-<% if @surveys.nil? %>
+<h1>Welcome <%= @user.email.split('@',2)[0] %></h1>
+<% if @surveys.empty? %>
   <p class="section">You don't have any Surveys.</p>
 <% else %>
 <p class="section">Your Resistivity Surveys</p>
@@ -12,4 +12,4 @@
 </ul>
 <% end %> 
 <hr>
-<%= link_to image_tag('grid.png', :class => 'icon'), new_survey_path %><span class="iconlabel"><%= link_to ('Add a New Survey'), new_survey_path %></span>
+<%= render 'navwrapper' %>
