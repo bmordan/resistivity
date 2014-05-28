@@ -37,6 +37,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rake'
 end
   
 # Use ActiveModel has_secure_password
