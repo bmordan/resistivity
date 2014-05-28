@@ -31,7 +31,7 @@ input[type=submit]{
 li{list-style-type:none;}
 .section{clear:both;}
 #navwrapper,table{clear:both;padding:10px;}
-.navitem, .icon{float:left;width:64px;padding:2%;}
+.navitem, .icon{float:left;width:64px;padding:5px;}
 .icon{clear:both;text-align:center;}
 .upnudge{margin: -18px 0px 0px 0px;}
 input.icon{padding-top:21px;}
