@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   layout "login"
   
   def new
+    redirect_to surveys_path unless session[:user_id].nil?
   end
   
   def create

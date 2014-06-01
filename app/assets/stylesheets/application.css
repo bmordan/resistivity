@@ -30,6 +30,6 @@ input[type=submit]{
 li{list-style-type:none;}
 .section{clear:both;}
 #navwrapper,table{clear:both;padding:10px;}
-.navitem{float:left;width:64px;margin:25px;}
+.navitem{display:block;float:left;width:64px;margin:25px;}
 .icon{display:block;width:98%;text-align:center;}
-.upnudge{margin: 0px 0px 0px 0px;}
+.icon-lable{display:block;width:98%;text-align:center;}

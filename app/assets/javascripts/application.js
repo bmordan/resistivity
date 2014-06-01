@@ -17,7 +17,10 @@
 
 jQuery(function() {
   
-  jQuery('input[alt="Unlock"]').hide();
+  jQuery(document).on('page:change', function () {
+    // Actions to do
+    jQuery('input[alt="Unlock"]').hide();
+  });
   
   //hover
   /*
