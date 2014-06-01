@@ -2,21 +2,21 @@
   <% case controller.action_name %>
     <% when 'new' %> 
       <div class="navitem">
-        <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %>
+        <%= link_to image_tag('home.png', :class => 'icon'), surveys_path %><br />
         <%= link_to 'Home', surveys_path, :class => 'icon' %>
       </div>
-      <div class="navitem upnudge">
-        <%= image_submit_tag('save.png', :class => 'icon') %>
+      <div class="navitem">
+        <%= image_submit_tag('save.png', :class => 'icon') %><br />
         <%= link_to 'Save', new_survey_grid_path(@survey), :class => 'icon' %>
       </div>
       
     <% when 'edit' %>
       <div class="navitem">
-        <%= link_to image_tag('home.png', :class => 'icon'), survey_path(@survey) %>
+        <%= link_to image_tag('home.png', :class => 'icon'), survey_path(@survey) %><br />
         <%= link_to 'Home', survey_path(@survey), :class => 'icon' %>
       </div>
-      <div class="navitem upnudge">
-        <%= image_submit_tag('save.png', :class => 'icon') %>
+      <div class="navitem">
+        <%= image_submit_tag('save.png', :class => 'icon') %><br />
         <%= submit_tag 'Update', :class => 'icon' %>
       </div>           
     <% else %>

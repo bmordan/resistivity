@@ -5,10 +5,10 @@
   <% @survey.gridy.times do %>
     <% i=1 %>
       <% @survey.gridx.times do %>
-        <input name="<%= r.to_s + '|' + i.to_s %>" size="3">
+        <input name="<%= r.to_s + '|' + i.to_s %>" size="3" class="input-grid">
         <% i+=1 %>
       <% end %>
-      <br />
+      *<br />
     <% r+=1 %>
   <% end %>
 <hr />

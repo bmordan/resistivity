@@ -1,5 +1,17 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#loginWrapper{width:40%;margin:auto;}
+#loginWrapper{width:80%;margin:auto;}
 #email,#password{width:99%;}
+#logInLock{width:64px;}
+#title{width:80%;margin:0%;}
+#login{width:45%;margin:auto;}
+.panel{
+  width:25%;
+  float:left;
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); /* IE 9 */
+  -webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+  margin:0px 0px 0px -30px;
+}
+#panel-text{clear:both;padding-top:30px;display:block;}

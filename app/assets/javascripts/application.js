@@ -18,7 +18,9 @@
 jQuery(function() {
   
   jQuery('input[alt="Unlock"]').hide();
+  
   //hover
+  /*
   jQuery('#loginLock').hover(
     function(){
       jQuery('input[alt="Unlock"]').stop(true, true).show();
@@ -29,6 +31,9 @@ jQuery(function() {
       jQuery('input[alt="Lock"]').stop(true, true).hide();
     }
   );
+  jQuery('input[alt="Unlock"]').click(true, true).show();
+  */
+  
   //focus
   jQuery('#email').focus(function(){
     jQuery('input[alt="Lock"]').hide();
@@ -38,7 +43,9 @@ jQuery(function() {
     jQuery('input[alt="Lock"]').hide();
     jQuery('input[alt="Unlock"]').show();
   });
+  
   //blur
+  /*
   jQuery('#email').blur(function(){
     jQuery('input[alt="Unlock"]').hide();
     jQuery('input[alt="Lock"]').show();
@@ -47,6 +54,7 @@ jQuery(function() {
     jQuery('input[alt="Unlock"]').hide();
     jQuery('input[alt="Lock"]').show();
   });
+  */
   
   
 

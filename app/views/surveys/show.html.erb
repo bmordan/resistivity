@@ -40,5 +40,9 @@
   $('#download').click(function(){
     var base64 = canvas.toDataURL();
     Canvas2Image.saveAsPNG(canvas);
-  })
+  });
+  $('#download-link').click(function(){
+    var base64 = canvas.toDataURL();
+    Canvas2Image.saveAsPNG(canvas);
+  });  
 </script>

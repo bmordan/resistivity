@@ -26,12 +26,10 @@ input[type=submit]{
   color:#7c7c7c;
   font-size:1em;
   clear:both;
-  text-align:center;
-  margin:-20px 0px 0px 0px;}
+  text-align:center;}
 li{list-style-type:none;}
 .section{clear:both;}
 #navwrapper,table{clear:both;padding:10px;}
-.navitem, .icon{float:left;width:64px;padding:5px;}
-.icon{clear:both;text-align:center;}
-.upnudge{margin: -18px 0px 0px 0px;}
-input.icon{padding-top:21px;}
+.navitem{float:left;width:64px;margin:25px;}
+.icon{display:block;width:98%;text-align:center;}
+.upnudge{margin: 0px 0px 0px 0px;}

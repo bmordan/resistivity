@@ -8,11 +8,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <div style="width:40%;margin:auto;margin-top:-5%;">
-    <div>
-      <h1 id="title">Resistivity.Guru</h1>
-      <p>Electrical resistance surveys, also called earth resistance or resistivity surveys, are one of a number of methods used in archaeological geophysics. In this type of survey electrical resistance meters are used to detect and map subsurface archaeological features and patterning. This site renders the data readings of these surveys into coloured maps.</p>
+  <div>
+    <div id="fourPanelHeader">
+      <div class="panel"><%= image_tag('res2.png') %></div>
+      <div class="panel"><%= image_tag('res3.png') %></div>
+      <div class="panel"><%= image_tag('res5.png') %></div>
+      <div id="panel-text">
     </div>
+    
+    <p>Electrical resistance surveys, also called earth resistance or resistivity surveys, are one of a number of methods used in archaeological geophysics. In this type of survey electrical resistance meters are used to detect and map subsurface archaeological features and patterning. This site renders the data readings of these surveys into coloured maps.</p>
+  </div>
+    
     <div id="user_nav">
       <% if current_user %>
         <%= current_user.email %> | <%= link_to "Log out", logout_path %>
@@ -23,6 +29,6 @@
     <hr />  
     <h2 style="text-align:center;"><%= flash[:notice] %></h2>
     <%= yield %>
-  </div>  
+  </div>
 </body>
 </html>

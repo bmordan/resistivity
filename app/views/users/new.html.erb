@@ -1,4 +1,4 @@
-
+<div id="login">
   <h1>Create an account</h1>
     <%= form_for @user do |f|%>
       <% if @user.errors.any? %>
@@ -19,5 +19,6 @@
         <%= f.password_field :password_confirmation %>
       </p>  
   
-      <%= image_submit_tag("save.png", :class => "icon") %>
+      <%= image_submit_tag("save.png", :id => 'download', :class => "icon") %>
     <% end %>
+</div>
