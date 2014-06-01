@@ -7,11 +7,14 @@
 #title{width:80%;margin:0%;}
 #login{width:45%;margin:auto;}
 .panel{
-  width:25%;
+  width:33%;
+  height:210px;
   float:left;
   transform:rotate(7deg);
   -ms-transform:rotate(7deg); /* IE 9 */
   -webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
-  margin:0px 0px 0px -30px;
+  -moz-box-shadow:    3px 3px 3px 3px #ccc;
+  -webkit-box-shadow: 3px 3px 3px 3px #ccc;
+  box-shadow:         3px 3px 3px 3px #ccc;  
 }
 #panel-text{clear:both;padding-top:30px;display:block;}
