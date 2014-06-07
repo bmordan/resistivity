@@ -1,10 +1,11 @@
+<%= @debug %>
 <%= form_for @grid, :url => survey_grid_path, method: :put do |f| %>
-  <input type="hidden" name="grid_x" value="<%= @grid[0][:rownumber] %>">
+  <input type="hidden" name="grid_x" value="<%= @grid.length %>">
   <% r=1 %>
   <% @grid.each do |d| %>
     <% i=1 %>
     <% d.row.split(",").each do |v| %>
-      <input name="<%= r.to_s + '|' + i.to_s %>" value="<%= v %>" size="2">
+      <input name="<%= d.id.to_s + '|' + i.to_s %>" value="<%= v %>" size="2">
       <% i+=1 %>
     <% end %>
     * <%= r %><br />
