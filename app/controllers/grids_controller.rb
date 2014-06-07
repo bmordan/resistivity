@@ -55,7 +55,7 @@ class GridsController < ApplicationController
       end
     end
     
- #   redirect_to survey_path(params[:survey_id]) 
+    redirect_to survey_path(params[:survey_id]) 
   end
 
   private
