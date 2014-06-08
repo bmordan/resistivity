@@ -27,16 +27,17 @@ class GridsController < ApplicationController
   def edit
     @survey = Survey.find(params[:survey_id])
     @grid = Grid.find_all_by_survey_id(params[:survey_id])
+    @grid.sort! {|a,b| a.rownumber<=>b.rownumber}
   end
   
   def update
     @hash = {}
-    
     @cols = []
     params.each do |k,v|
       if k.include? "|"
         @cols << k.split("|")[1].to_i
       end 
+      v == "" ? v = 0 : v = v.to_s
     end
     @cols.max()
     @rownumber = 0
