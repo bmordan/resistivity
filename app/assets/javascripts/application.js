@@ -17,12 +17,8 @@
 
 jQuery(function() {
   
-  jQuery('#loginLock').on('page:change', function () {
-    // Actions to do
-    jQuery('input[alt="Unlock"]').hide();
-  });
-  
-  
+  jQuery('input[alt="Unlock"]').hide();
+  jQuery('input[alt="Lock"]').show();
   //hover
   /*
   jQuery('#loginLock').hover(
