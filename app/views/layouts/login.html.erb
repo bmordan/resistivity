@@ -8,17 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body> 
-  <div>
-    <div id="fourPanelHeader">
-      <div class="panel"><%= image_tag('res2.png') %></div>
-      <div class="panel"><%= image_tag('res3.png') %></div>
-      <div class="panel"><%= image_tag('res4.png') %></div>
-      <div id="panel-text">
+  
+    <div style="background-image:url('/assets/images/Resiguru.png');height:220px;">
+        <h1 style="color:#fff;font-size:5em;margin:auto;padding: 50px auto 0px auto;">Resistivity.Guru</h1>
     </div>
-    
-    <p>Electrical resistance surveys, also called earth resistance or resistivity surveys, are one of a number of methods used in archaeological geophysics. In this type of survey electrical resistance meters are used to detect and map subsurface archaeological features and patterning. This site renders the data readings of these surveys into coloured maps.</p>
-  </div>
-    
+ 
     <div id="user_nav">
       <% if current_user %>
         <%= current_user.email %> | <%= link_to "Log out", logout_path %>
@@ -29,6 +23,7 @@
     <hr />  
     <h2 style="text-align:center;"><%= flash[:notice] %></h2>
     <%= yield %>
+    <p style="width:45%;float:left;">Electrical resistance surveys, also called earth resistance or resistivity surveys, are one of a number of methods used in archaeological geophysics. In this type of survey electrical resistance meters are used to detect and map subsurface archaeological features and patterning. This site renders the data readings of these surveys into coloured maps.</p>
   </div>
 </body>
 </html>

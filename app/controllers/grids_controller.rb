@@ -39,7 +39,7 @@ class GridsController < ApplicationController
       end 
     end
     @cols.max()
-    
+    @rownumber = 0
     @row = ''
     params.each do |k,v|
       if k.include? "|"
@@ -47,14 +47,15 @@ class GridsController < ApplicationController
           @row << v.to_s+","
         else
           @row << v.to_s
+          @rownumber += 1
           @grid = Grid.find_by_id(k.split("|")[0])
           @grid.row = @row
+          @grid.rownumber = @rownumber
           @grid.save
           @row = ''
         end  
       end
     end
-    
     redirect_to survey_path(params[:survey_id]) 
   end
 
