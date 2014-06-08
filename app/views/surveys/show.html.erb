@@ -1,4 +1,3 @@
-<%= @debug.inspect %>
 <h2><%= @survey.site %> | <%= @survey.date %></h2>
 <% if @survey.grid.empty? %>
   <div id="gridWrapper">
@@ -9,7 +8,7 @@
     <canvas id="grid" width="<%= @survey.gridx*30 %>" height="<%= @survey.gridy*30+30 %>"></canvas>
   </div>
   
-  <% @survey.grid.each do |r| %>
+  <% @sorted.each do |r| %>
     <% @row = [] %>
     <% r.row.split(",").each do |num| %>
       <% @row.push(num.to_i) %>

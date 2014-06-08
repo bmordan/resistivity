@@ -12,15 +12,15 @@ class SurveysController < ApplicationController
   def show
     @survey = Survey.find(params[:id])
     unless @survey.grid.empty? then
-      @debug = @survey.grid.sort {|a,b| a.rownumber<=>b.rownumber}
       @array = []
-      @survey.grid.each do |r|
+      @sorted = @survey.grid.sort {|a,b| a.rownumber<=>b.rownumber}
+      @sorted.each do |r|
         data = r.row.split(",")
         data.each do |d| @array << d end
       end
       @normalise = 255/@array.max.to_i
       @y = 30
-    end  
+    end 
   end
   
   def new
