@@ -17,10 +17,11 @@
 
 jQuery(function() {
   
-  jQuery(document).on('page:change', function () {
+  jQuery('#loginLock').on('page:change', function () {
     // Actions to do
     jQuery('input[alt="Unlock"]').hide();
   });
+  
   
   //hover
   /*
