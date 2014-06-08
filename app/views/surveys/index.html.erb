@@ -1,12 +1,12 @@
 <h1>Welcome <%= @user.email.split('@',2)[0] %></h1>
 <% if @surveys.empty? %>
-  <p class="section">You don't have any Surveys.</p>
+  <p class="section">You don't have any Surveys Yet.</p>
 <% else %>
 <p class="section">Your Resistivity Surveys</p>
 <ul>
   <% @surveys.each do |s| %>
   <li>
-    <h2><%= link_to s.site, survey_path(s.id) %></h2>
+    <h2><%= link_to s.site, survey_path(s.id) %>  <div style="font-size:50%;display:inline;"><%= link_to '[delete]', survey_path(s.id), method: :delete, data: { confirm: 'Are you sure?' } %></div></h2>
   </li>
   <% end %>
 </ul>
