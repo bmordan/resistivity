@@ -21,7 +21,7 @@
         var x = 0;
         for(var i=0;i < array.length;i++){
           context.beginPath();
-          context.strokeStyle="rgb(" + array[i]*normalise + ",0,0)";
+          context.strokeStyle="rgb(0,0," + array[i]*normalise + ")";
           context.moveTo(x, <%= @y %>);
           context.lineTo(x+30, <%= @y %>);
           context.lineWidth = 30;
