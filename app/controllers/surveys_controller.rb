@@ -5,7 +5,7 @@ class SurveysController < ApplicationController
        redirect_to login_path
      else
         @user = User.find(session[:user_id])
-        @surveys = Survey.find_by user_id(2) 
+        @surveys = Survey.find_by user_id(session[:user_id]) 
      end 
   end  
   
