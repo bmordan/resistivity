@@ -1,5 +1,5 @@
 <h1>Welcome <%= @user.email.split('@',2)[0] %></h1>
-<% if @surveys.empty? %>
+<% if @surveys.nil? %>
   <p class="section">You don't have any Surveys Yet.</p>
 <% else %>
 <p class="section">Your Resistivity Surveys</p>
